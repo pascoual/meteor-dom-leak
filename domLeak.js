@@ -20,11 +20,11 @@ if (Meteor.isClient) {
     return DOMLeak.blocs.find();
   }
 
-  Template.bloc.events({
+  /*Template.bloc.events({
     'click .bloc': function () {
       alert('U Can\'t Touch This: http://en.wikipedia.org/wiki/U_Can\'t_Touch_This');
     }
-  });
+  });*/
 }
 
 if (Meteor.isServer) {
