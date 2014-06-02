@@ -1,0 +1,14 @@
+/* CSS declarations go here */
+.blue {
+  width: 100%;
+  background-color: blue;
+}
+
+.red {
+  width: 100%;
+  background-color: red;
+}
+
+.bloc {
+  display: block;
+}

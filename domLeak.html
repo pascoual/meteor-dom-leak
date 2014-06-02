@@ -1,0 +1,33 @@
+<head>
+  <title>domLeak</title>
+</head>
+
+<body>
+  {{masterLayout}}
+</body>
+
+<template name="masterLayout">
+  <h1>DOM Leak Demo</h1>
+  <button class="blue">blue</button><button class="red">red</button>
+  <div id="content">
+    {{> yield}}
+  </div>
+</template>
+
+<template name="blue">
+  <div class="blue">{{> domLeak}}</div>
+</template>
+<template name="red">
+  <div class="red">{{> domLeak}}</div>
+</template>
+
+
+<template name="domLeak">
+  {{#each getBlocs}}
+    {{> bloc}}
+  {{/each}}
+</template>
+
+<template name="bloc">
+  <div class="bloc">{{value}}</div>
+</template>
