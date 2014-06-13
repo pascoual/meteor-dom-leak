@@ -3,22 +3,26 @@
 </head>
 
 <body>
-  {{masterLayout}}
+  {{> masterLayout}}
 </body>
 
 <template name="masterLayout">
   <h1>DOM Leak Demo</h1>
   <button class="blue">blue</button><button class="red">red</button>
   <div id="content">
-    {{> yield}}
+    {{#if isBlue}}
+      {{> blue}}
+    {{else}}
+      {{> red}}
+    {{/if}}
   </div>
 </template>
 
 <template name="blue">
-  <div class="blue">{{> domLeak}}</div>
+  <div class="blue" id="toRemove">{{> domLeak}}</div>
 </template>
 <template name="red">
-  <div class="red">{{> domLeak}}</div>
+  <div class="red" id="toRemove">{{> domLeak}}</div>
 </template>
 
 
